@@ -1,0 +1,156 @@
+const RankIcon = ({ level }) => {
+  const getIconContent = () => {
+    switch(level) {
+      case 0:
+        return (
+          <path d="M50 5 L90 25 V75 L50 95 L10 75 V25 Z" fill="none" stroke="#f9e272" strokeWidth="4" />
+        );
+      case 1:
+        return (
+          <>
+            <path d="M50 5 L90 25 V75 L50 95 L10 75 V25 Z" fill="none" stroke="#f9e272" strokeWidth="4" />
+            <path d="M30 45 L50 65 L70 45" fill="none" stroke="#f9e272" strokeWidth="6" strokeLinecap="round" />
+          </>
+        );
+      case 2:
+        return (
+          <>
+            <path d="M50 5 L90 25 V75 L50 95 L10 75 V25 Z" fill="none" stroke="#f9e272" strokeWidth="4" />
+            <path d="M30 40 L50 60 L70 40" fill="none" stroke="#f9e272" strokeWidth="6" strokeLinecap="round" />
+            <path d="M30 55 L50 75 L70 55" fill="none" stroke="#f9e272" strokeWidth="6" strokeLinecap="round" />
+          </>
+        );
+      case 3:
+        return (
+          <>
+            <path d="M50 5 L90 25 V75 L50 95 L10 75 V25 Z" fill="none" stroke="#f9e272" strokeWidth="4" />
+            <path d="M50 30 L56 45 H72 L60 55 L65 70 L50 62 L35 70 L40 55 L28 45 H44 Z" fill="#f9e272" />
+          </>
+        );
+      case 4:
+        return (
+          <>
+            <path d="M50 5 L90 25 V75 L50 95 L10 75 V25 Z" fill="none" stroke="#f9e272" strokeWidth="4" />
+            <path d="M50 30 L56 45 H72 L60 55 L65 70 L50 62 L35 70 L40 55 L28 45 H44 Z" fill="#f9e272" />
+            <path d="M10 30 Q 0 50 10 70" fill="none" stroke="#f9e272" strokeWidth="3" />
+            <path d="M90 30 Q 100 50 90 70" fill="none" stroke="#f9e272" strokeWidth="3" />
+            <path d="M5 40 Q -5 50 5 60" fill="none" stroke="#f9e272" strokeWidth="2" opacity="0.6" />
+            <path d="M95 40 Q 105 50 95 60" fill="none" stroke="#f9e272" strokeWidth="2" opacity="0.6" />
+          </>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="relative w-20 h-24 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
+      {/* Glow efekt iza ikone */}
+      <div className="absolute inset-0 bg-yellow-500/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-[0_0_8px_rgba(249,226,114,0.6)]">
+        {getIconContent()}
+      </svg>
+    </div>
+  );
+};
+
+const CardCorners = () => (
+  <>
+    <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#f9e272] z-20">
+      <div className="absolute top-0 left-0 w-2 h-2 bg-[#f9e272] shadow-[0_0_10px_#f9e272]"></div>
+    </div>
+    <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#f9e272] z-20">
+      <div className="absolute top-0 right-0 w-2 h-2 bg-[#f9e272] shadow-[0_0_10px_#f9e272]"></div>
+    </div>
+    <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#f9e272] z-20">
+       <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#f9e272] shadow-[0_0_10px_#f9e272]"></div>
+    </div>
+    <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#f9e272] z-20">
+       <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#f9e272] shadow-[0_0_10px_#f9e272]"></div>
+    </div>
+  </>
+);
+
+const LoyaltyCard = ({ height, title, level, index }) => {
+  return (
+    <div 
+      className="relative flex flex-col items-center bg-[#1a0b2e]/70 border-x border-[#f9e272]/30 shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-2 group overflow-hidden"
+      style={{ height: `${height}px`, width: '170px', boxShadow: '0 0 40px 0 rgba(217,70,239,0.10), 0 0 0 2px rgba(249,226,114,0.08)' }}
+    >
+      {/* Glow background always visible */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 rounded-2xl bg-fuchsia-500/10 blur-2xl opacity-80"></div>
+        <div className="absolute inset-0 rounded-2xl bg-yellow-400/10 blur-2xl opacity-60"></div>
+      </div>
+      {/* Pozadinska tekstura/gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#3d1a63]/80 via-[#1a0b2e]/80 to-[#0f051d]/80 opacity-80 z-10"></div>
+      {/* Animisani highlight koji prolazi kroz karticu */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-20"></div>
+      {/* Glow on hover */}
+      <div className="absolute inset-0 rounded-2xl pointer-events-none z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl bg-fuchsia-500/30"></div>
+      <CardCorners />
+      {/* Sadržaj kartice */}
+      <div className="relative z-40 w-full h-full flex flex-col items-center pt-6">
+        {/* Level oznaka */}
+        <div className="mb-2 px-3 py-0.5 border border-[#f9e272]/30 rounded-full bg-black/40">
+          <span className="text-[10px] text-[#f9e272]/70 font-mono tracking-tighter uppercase">Level 0{index + 1}</span>
+        </div>
+        {/* Ikona */}
+        <div className="my-4">
+          <RankIcon level={level} />
+        </div>
+        {/* Titula */}
+        <h3 className="text-[#f9e272] font-black text-lg tracking-widest uppercase text-center px-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          {title}
+        </h3>
+        {/* Uklonjene dekorativne linije i power bar */}
+      </div>
+    </div>
+  );
+};
+
+// Nova Loyalty sekcija za sajt
+const Loyalty = () => {
+  const levels = [
+    { title: 'Officer', height: 260 },
+    { title: 'Captain', height: 300 },
+    { title: 'Major', height: 340 },
+    { title: 'General', height: 380 },
+    { title: 'Admiral', height: 420 }
+  ];
+
+  return (
+    <div className="py-24 bg-[#08020d] relative overflow-hidden">
+      {/* Header */}
+      <div className="mb-16 text-center relative z-10">
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-40 bg-fuchsia-600/20 blur-[60px] rounded-full"></div>
+        <h2 className="relative text-[#f9e272] text-4xl md:text-5xl font-black tracking-[0.3em] uppercase italic">
+          Loyalty
+        </h2>
+        <p className="text-white/40 text-sm tracking-[0.5em] mt-2 uppercase">Program Nagrada</p>
+      </div>
+      {/* Grid Kontejner - Poravnanje po dnu */}
+      <div className="flex items-end justify-center gap-4 md:gap-6 max-w-full overflow-x-auto pb-20 px-10">
+        {levels.map((lvl, idx) => (
+          <div key={idx} className="relative group">
+            {/* Podni sjaj */}
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[120%] h-12 bg-fuchsia-600/20 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <LoyaltyCard 
+              height={lvl.height} 
+              title={lvl.title} 
+              level={idx} 
+              index={idx}
+            />
+            {/* Broj nivoa ispod kartice */}
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[#f9e272]/40 font-mono text-xl font-bold">
+              0{idx + 1}
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* Pozadinski ambijent */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-fuchsia-900/10 blur-[120px] rounded-full -z-10"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-900/10 blur-[120px] rounded-full -z-10"></div>
+    </div>
+  );
+};
