@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Gift, Trophy, Flame } from 'lucide-react';
 import MoneyRain from '../components/MoneyRain';
 import PromocijeHero from '../components/PromocijeHero';
