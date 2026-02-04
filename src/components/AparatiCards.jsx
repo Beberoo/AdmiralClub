@@ -70,7 +70,7 @@ const AparatiCards = ({ machines, flippedCards, toggleFlip }) => {
               <div className="flex gap-3 mt-4">
                 <Link
                   to="/locations"
-                  className="flex-1 py-4 bg-fuchsia-600 text-white rounded-xl font-black text-[9px] tracking-[0.2em] shadow-lg hover:bg-fuchsia-500 transition-colors text-center flex items-center justify-center"
+                  className="w-full sm:w-max px-8 py-4 bg-fuchsia-700 !text-white font-black text-xs tracking-[0.2em] rounded-full shadow-md hover:bg-fuchsia-800 hover:!text-white transition-all uppercase focus:outline-none text-center"
                 >
                   PRONAĐI KLUB
                 </Link>

@@ -13,9 +13,14 @@ const JackpotsCTA = () => {
           <p className="text-gray-400 text-lg mb-12 font-light italic">
             Najveće isplate u regionu. Isplata odmah, bez poreza na sreću. Dođi i uzmi ono što ti pripada.
           </p>
-          <Link to="/" className="inline-block px-12 py-5 bg-white text-black font-black text-sm tracking-[0.4em] rounded-full hover:bg-fuchsia-500 hover:text-white transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-fuchsia-500/50 uppercase scale-110">
-            NAĐI NAJBLIŽI KLUB I POBEDI
-          </Link>
+          <div className="flex flex-col gap-4 items-center">
+            <Link
+              to="/"
+              className="w-full sm:w-max px-12 py-5 bg-fuchsia-700 !bg-fuchsia-700 !text-white !font-black !text-sm !tracking-[0.4em] !rounded-full !shadow-md hover:!bg-fuchsia-800 hover:!text-white transition-all uppercase focus:!outline-none"
+            >
+              NAĐI NAJBLIŽI KLUB I POBEDI
+            </Link>
+          </div>
         </div>
       </div>
     </div>

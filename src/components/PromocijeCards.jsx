@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap } from 'lucide-react';
+import { Zap, ArrowUpRight } from 'lucide-react';
 
 const PromocijeCards = ({ activePromos }) => {
   const isScrollable = activePromos.length > 3;
@@ -48,8 +48,9 @@ const PromocijeCards = ({ activePromos }) => {
                   {promo.title}
                 </h3>
                 <p className="text-fuchsia-400 text-lg md:text-xl mb-8 tracking-widest">{promo.subtitle}</p>
-                <button className="w-full md:w-max px-12 py-4 bg-white text-black rounded-3xl text-[10px] font-black tracking-widest hover:bg-fuchsia-500 hover:text-white transition-all shadow-2xl uppercase">
-                  Saznaj više
+                <button className="flex items-center gap-1 text-[9px] font-black text-white hover:text-fuchsia-500 transition-colors group/btn uppercase whitespace-nowrap">
+                  PROČITAJ{' '}
+                  <ArrowUpRight size={12} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </button>
               </div>
             </div>

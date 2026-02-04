@@ -21,7 +21,7 @@ const PromocijeNews = ({ newsItems }) => {
               <img
                 src={item.img}
                 alt=""
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 opacity-60 group-hover:opacity-100"
+                className="w-full h-full object-cover  group-hover:scale-110 transition-all duration-1000 opacity-60 group-hover:opacity-100"
               />
               <div className="absolute top-6 left-6 px-4 py-1.5 bg-black/80 backdrop-blur-md rounded-full text-[9px] font-black text-fuchsia-500 border border-fuchsia-500/30">
                 {item.category}

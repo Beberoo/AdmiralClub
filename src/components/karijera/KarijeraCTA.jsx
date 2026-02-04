@@ -1,31 +1,34 @@
 import React from 'react';
 import { Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const KarijeraCTA = () => {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-4xl mx-auto p-1 rounded-[50px] bg-gradient-to-r from-fuchsia-600 via-purple-600 to-amber-500 shadow-[0_0_80px_rgba(217,70,239,0.3)]">
-        <div className="bg-[#050208] rounded-[48px] p-12 md:p-20 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+    <div className="max-w-4xl mx-auto px-4 text-center relative z-10 mb-20">
+      <div className="p-1 rounded-[40px] bg-gradient-to-r from-amber-500 via-fuchsia-600 to-cyan-500">
+        <div className="bg-[#050208] rounded-[38px] p-12 md:p-20">
           <Send size={40} className="text-fuchsia-500 mx-auto mb-8 animate-bounce" />
-          <h2 className="text-4xl md:text-6xl text-white tracking-tighter mb-6 italic uppercase leading-none">
+          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-8">
             POŠALJITE <br />
             <span className="text-fuchsia-500">BIOGRAFIJU</span>
           </h2>
-          <p className="text-gray-400 text-lg font-light italic mb-10 max-w-2xl mx-auto lowercase font-sans leading-relaxed px-4">
+          <p className="text-gray-400 text-lg mb-12 font-light italic">
             Ukoliko ne vidite odgovarajuću poziciju, pošaljite nam Vaš CV u bazu podataka. Mi uvijek tražimo pobjednike.
           </p>
           <div className="flex flex-col gap-4 items-center">
-            <button className="w-full sm:w-max px-14 py-5 bg-white text-black rounded-full font-black text-[11px] tracking-widest hover:bg-fuchsia-600 hover:text-white transition-all shadow-3xl uppercase">
+            <Link
+              to="/"
+              className="w-full sm:w-max px-12 py-5 bg-fuchsia-700 text-white font-black text-sm tracking-[0.4em] rounded-full shadow-md hover:bg-fuchsia-800 hover:text-white transition-all uppercase focus:outline-none"
+            >
               Pošalji Biografiju
-            </button>
+            </Link>
             <span className="text-[9px] text-gray-600 font-sans italic tracking-widest">
               HR tim će Vas kontaktirati u najkraćem roku.
             </span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
