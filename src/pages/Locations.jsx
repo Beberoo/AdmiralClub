@@ -10,6 +10,7 @@ const Locations = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [hoveredClubId, setHoveredClubId] = useState(null);
+  const [selectedClubId, setSelectedClubId] = useState(null);
   const cities = CITIES;
 
   const filteredClubs = useMemo(() => {
@@ -34,7 +35,11 @@ const Locations = () => {
   }, []);
 
   return (
-    <>
+    <div className="pt-24 pb-20 animate-in fade-in duration-700 min-h-screen bg-[#050208] relative overflow-hidden">
+      {/* Dynamic Background Glows */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-fuchsia-600/10 blur-[120px] rounded-full animate-pulse"></div>
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-pink-600/10 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+
       <LocationsHeader />
       <LocationsFilterBar
         activeCity={activeCity}
@@ -50,9 +55,11 @@ const Locations = () => {
         allClubs={CLUBS_DATA}
         hoveredClubId={hoveredClubId}
         setHoveredClubId={setHoveredClubId}
+        selectedClubId={selectedClubId}
+        onCardClick={setSelectedClubId}
       />
       <LocationsStyles />
-    </>
+    </div>
   );
 };
 

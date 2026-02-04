@@ -8,6 +8,7 @@ export const CLUBS_DATA = [
     hours: '00:00 - 24:00',
     features: ['bar', 'parking', 'wifi', 'jackpot'],
     coordinates: [44.823, 20.465],
+    image: 'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=400&h=300&fit=crop',
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const CLUBS_DATA = [
     hours: '00:00 - 24:00',
     features: ['bar', 'wifi', 'jackpot'],
     coordinates: [44.815, 20.425],
+    image: 'https://images.unsplash.com/photo-1511882150382-421056c481d6?w=400&h=300&fit=crop',
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const CLUBS_DATA = [
     hours: '00:00 - 24:00',
     features: ['bar', 'parking', 'wifi', 'jackpot'],
     coordinates: [45.248, 19.845],
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop',
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const CLUBS_DATA = [
     hours: '00:00 - 24:00',
     features: ['bar', 'wifi', 'jackpot'],
     coordinates: [43.321, 21.895],
+    image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=400&h=300&fit=crop',
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const CLUBS_DATA = [
     hours: '08:00 - 04:00',
     features: ['bar', 'parking', 'jackpot'],
     coordinates: [44.012, 20.916],
+    image: 'https://images.unsplash.com/photo-1571714899384-8dd9bdd6e5c6?w=400&h=300&fit=crop',
   },
 ];
 

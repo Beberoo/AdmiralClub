@@ -5,6 +5,7 @@ import Locations from './pages/Locations';
 import Jackpotovi from './pages/Jackpotovi';
 import Aparati from './pages/Aparati';
 import Promocije from './pages/Promocije';
+import Karijera from './pages/Karijera';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/jackpotovi" element={<Jackpotovi />} />
           <Route path="/aparati" element={<Aparati />} />
           <Route path="/promocije" element={<Promocije />} />
+          <Route path="/karijera" element={<Karijera />} />
         </Routes>
         <Footer />
       </div>

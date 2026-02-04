@@ -2,12 +2,13 @@ import React from 'react';
 import { MapPin, Navigation, Clock, Phone } from 'lucide-react';
 import FeatureIcon from './FeatureIcon';
 
-const LocationsCards = ({ clubs, hoveredClubId, setHoveredClubId }) => {
+const LocationsCards = ({ clubs, hoveredClubId, setHoveredClubId, onCardClick }) => {
   return (
     <div className="grid grid-cols-2 gap-4 max-h-[900px] overflow-y-auto pr-4 custom-scrollbar">
       {clubs.map((club) => (
         <div
           key={club.id}
+          onClick={() => onCardClick(club.id)}
           onMouseEnter={() => setHoveredClubId(club.id)}
           onMouseLeave={() => setHoveredClubId(null)}
           className={`group relative bg-[#0a0510] border rounded-3xl overflow-hidden transition-all duration-300 shadow-2xl cursor-pointer ${

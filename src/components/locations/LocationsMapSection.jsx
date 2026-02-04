@@ -3,7 +3,7 @@ import { X } from 'lucide-react';
 import LocationsCards from './LocationsCards';
 import LocationsMap from './LocationsMap';
 
-const LocationsMapSection = ({ clubs, allClubs, hoveredClubId, setHoveredClubId }) => {
+const LocationsMapSection = ({ clubs, allClubs, hoveredClubId, setHoveredClubId, selectedClubId, onCardClick }) => {
   return (
     <div className="relative py-20 px-4 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -30,16 +30,17 @@ const LocationsMapSection = ({ clubs, allClubs, hoveredClubId, setHoveredClubId 
                 clubs={clubs}
                 hoveredClubId={hoveredClubId}
                 setHoveredClubId={setHoveredClubId}
+                onCardClick={onCardClick}
               />
             </div>
 
             <div className="relative h-[900px] bg-[#11081a] rounded-3xl border border-white/5 overflow-hidden sticky top-32">
               <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-              <LocationsMap clubs={allClubs} hoveredClubId={hoveredClubId} />
+              <LocationsMap clubs={allClubs} hoveredClubId={hoveredClubId} selectedClubId={selectedClubId} />
 
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-2xl text-center z-10">
                 <h4 className="text-white font-bold tracking-widest uppercase text-xs">Sve lokacije</h4>
-                <p className="text-gray-500 text-[10px] mt-1">Hoveraj karticu za pin na mapi</p>
+                <p className="text-gray-500 text-[10px] mt-1">Klikni karticu za zoom na lokaciju</p>
               </div>
             </div>
           </div>
