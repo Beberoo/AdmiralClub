@@ -20,9 +20,16 @@ const Navbar = () => {
     <nav className="w-full bg-[#0a0510]/80 backdrop-blur-xl fixed top-0 z-50 border-b border-white/5 shadow-lg shadow-purple-900/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" onClick={closeMenu} className="flex-shrink-0 text-white font-black text-2xl tracking-widest group cursor-pointer">
-            <span className="group-hover:text-fuchsia-400 transition-colors duration-300">ADMIRAL</span>
-            <span className="text-[10px] block font-medium tracking-[0.2em] text-gray-500 group-hover:text-gray-300 transition-colors">- CLUB -</span>
+          <Link to="/" onClick={closeMenu} className="flex-shrink-0 group cursor-pointer flex flex-col items-center gap-1">
+            <img 
+              src="/logo.png" 
+              alt="Admiral Club" 
+              className="h-8 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="flex flex-col items-center">
+              
+              <span className="text-[8px] font-medium tracking-[0.3em] text-gray-500 group-hover:text-gray-300 transition-colors">- CLUB -</span>
+            </div>
           </Link>
 
           {/* Desktop Menu */}

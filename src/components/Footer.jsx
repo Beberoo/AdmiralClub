@@ -10,7 +10,10 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-4 flex flex-col items-center relative z-10">
       
       <div className="mb-10 text-center">
-        <h4 className="text-white font-black text-3xl tracking-[0.3em] mb-2">ADMIRAL</h4>
+        <a href="/" className="flex items-center justify-center mb-4"> 
+          <img src="/logo.png" alt="Admiral Club" className="h-15 w-auto object-contain" />
+        </a>
+
         <span className="text-fuchsia-500 text-xs font-bold tracking-[0.5em] uppercase opacity-70">Club Elite</span>
       </div>
 

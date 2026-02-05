@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Gift, Trophy, Flame } from 'lucide-react';
 import MoneyRain from '../components/MoneyRain';
-import PromocijeHero from '../components/PromocijeHero';
-import PromocijeCards from '../components/PromocijeCards';
-import PromocijeNews from '../components/PromocijeNews';
-import PromocijeNewsletter from '../components/PromocijeNewsletter';
+import PromocijeHero from '../components/promocije/PromocijeHero';
+import PromocijeCards from '../components/promocije/PromocijeCards';
+import PromocijeNews from '../components/promocije/PromocijeNews';
+import PromocijeNewsletter from '../components/promocije/PromocijeNewsletter';
 
 const ScrollToTop = () => {
   useEffect(() => {

@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Crown, Zap, Disc, Dices, Gem, Flame, Star } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import MoneyRain from '../components/MoneyRain';
-import AparatiHero from '../components/AparatiHero';
-import AparatiCards from '../components/AparatiCards';
+import AparatiHero from '../components/aparati/AparatiHero';
+import AparatiCards from '../components/aparati/AparatiCards';
+import AparatiGames from '../components/aparati/AparatiGames';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const Aparati = () => {
   const [flippedCards, setFlippedCards] = useState({});
@@ -94,8 +104,85 @@ const Aparati = () => {
     },
   ];
 
+  const games = [
+    {
+      id: 1,
+      name: 'BOOK OF RA',
+      img: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=400',
+      tag: 'HOT',
+    },
+    {
+      id: 2,
+      name: 'SIZZLING HOT',
+      img: 'https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?q=80&w=400',
+      tag: 'NOVO',
+    },
+    {
+      id: 3,
+      name: 'ULTRA HOT',
+      img: 'https://images.unsplash.com/photo-1551269901-5c5e14c25df7?q=80&w=400',
+    },
+    {
+      id: 4,
+      name: 'LORD OF THE OCEAN',
+      img: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=400',
+    },
+    {
+      id: 5,
+      name: 'DOLPHINS PEARL',
+      img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=400',
+      tag: 'TOP',
+    },
+    {
+      id: 6,
+      name: 'LUCKY LADY',
+      img: 'https://images.unsplash.com/photo-1596742572435-081d21b023be?q=80&w=400',
+    },
+    {
+      id: 7,
+      name: 'COLUMBUS',
+      img: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?q=80&w=400',
+    },
+    {
+      id: 8,
+      name: 'FAUST',
+      img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=400',
+    },
+    {
+      id: 9,
+      name: 'MEGA JOKER',
+      img: 'https://images.unsplash.com/photo-1560264280-88b68371db39?q=80&w=400',
+    },
+    {
+      id: 10,
+      name: 'ALWAYS HOT',
+      img: 'https://images.unsplash.com/photo-1511193311914-0346f16efe90?q=80&w=400',
+    },
+    {
+      id: 11,
+      name: 'POWER STARS',
+      img: 'https://images.unsplash.com/photo-1600456899121-68eda5705257?q=80&w=400',
+    },
+    {
+      id: 12,
+      name: 'JUST JEWELS',
+      img: 'https://images.unsplash.com/photo-1574192324001-ee7e2cb0e2d2?q=80&w=400',
+    },
+    {
+      id: 13,
+      name: 'ROYAL TREASURES',
+      img: 'https://images.unsplash.com/photo-1560264280-88b68371db39?q=80&w=400',
+    },
+    {
+      id: 14,
+      name: 'PHARAOH GOLD',
+      img: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=400',
+    },
+  ];
+
   return (
     <div className="pt-24 pb-20 bg-[#050208] min-h-screen relative overflow-hidden uppercase">
+      <ScrollToTop />
       <MoneyRain />
 
       {/* Dynamic Background Glows */}
@@ -105,6 +192,7 @@ const Aparati = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <AparatiHero />
         <AparatiCards machines={machines} flippedCards={flippedCards} toggleFlip={toggleFlip} />
+        <AparatiGames games={games} />
       </div>
     </div>
   );

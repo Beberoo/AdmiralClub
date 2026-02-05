@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { Star, Crown, Shield } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import JackpotsHero from '../components/JackpotsHero';
-import JackpotsCards from '../components/JackpotsCards';
-import JackpotsCTA from '../components/JackpotsCTA';
+import JackpotsHero from '../components/jackpot/JackpotsHero';
+import JackpotsCards from '../components/jackpot/JackpotsCards';
+import JackpotsCTA from '../components/jackpot/JackpotsCTA';
 import MoneyRain from '../components/MoneyRain';
 
 // --- POMOĆNA KOMPONENTA ZA SKROLOVANJE NA VRH ---

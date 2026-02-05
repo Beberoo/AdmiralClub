@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Newspaper, Calendar, Clock, ArrowUpRight, Share2, Heart } from 'lucide-react';
 
 const PromocijeNews = ({ newsItems }) => {
@@ -46,10 +47,10 @@ const PromocijeNews = ({ newsItems }) => {
               </p>
 
               <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between gap-2">
-                <button className="flex items-center gap-1 text-[9px] font-black text-white hover:text-fuchsia-500 transition-colors group/btn uppercase whitespace-nowrap">
+                <Link to={`/news/${item.id}`} className="flex items-center gap-1 text-[9px] font-black text-white hover:text-fuchsia-500 transition-colors group/btn uppercase whitespace-nowrap">
                   PROČITAJ{' '}
                   <ArrowUpRight size={12} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                </button>
+                </Link>
                 <div className="flex gap-3 text-gray-500 flex-shrink-0">
                   <Heart size={14} className="hover:text-fuchsia-500 cursor-pointer transition-colors" />
                   <Share2 size={14} className="hover:text-fuchsia-500 cursor-pointer transition-colors" />

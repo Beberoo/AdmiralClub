@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Hero from '../components/Hero';
-import Jackpots from '../components/Jackpots';
-import Loyalty from '../components/Loyalty';
-import Locator from '../components/Locator';
-import ContentGrid from '../components/ContentGrid';
+import Hero from '../components/home/Hero';
+import Jackpots from '../components/jackpot/Jackpots';
+import Loyalty from '../components/home/Loyalty';
+import Locator from '../components/home/Locator';
+import ContentGrid from '../components/home/ContentGrid';
 import { Coins, DollarSign, Gem, Star } from 'lucide-react';
 
 // --- ANIMACIJSKI EFEKT: KIŠA NOVCA I SJAJA ---

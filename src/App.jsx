@@ -7,6 +7,8 @@ import Aparati from './pages/Aparati';
 import Promocije from './pages/Promocije';
 import Karijera from './pages/Karijera';
 import PromoDetail from './pages/PromoDetail';
+import CareerDetail from './pages/CareerDetail';
+import NewsDetail from './pages/NewsDetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -23,6 +25,8 @@ export default function App() {
           <Route path="/promocije" element={<Promocije />} />
           <Route path="/promo/:id" element={<PromoDetail />} />
           <Route path="/karijera" element={<Karijera />} />
+          <Route path="/career/:id" element={<CareerDetail />} />
+          <Route path="/news/:id" element={<NewsDetail />} />
         </Routes>
         <Footer />
       </div>

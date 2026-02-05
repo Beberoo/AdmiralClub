@@ -3,16 +3,16 @@ import { Gem, Disc, Club, Spade, Dices, Crown, Star, Instagram } from 'lucide-re
 
 const ContentGrid = () => {
   const games = [
-    { name: 'SLOTS', icon: Gem, color: 'text-fuchsia-400', bg: 'from-fuchsia-600/30 to-purple-900/30' },
-    { name: 'ROULETTE', icon: Disc, color: 'text-cyan-400', bg: 'from-cyan-600/30 to-blue-900/30' },
-    { name: 'POKER', icon: Club, color: 'text-amber-400', bg: 'from-amber-600/30 to-orange-900/30' },
-    { name: 'BLACKJACK', icon: Spade, color: 'text-rose-400', bg: 'from-rose-600/30 to-red-900/30' },
-    { name: 'DICE', icon: Dices, color: 'text-purple-400', bg: 'from-purple-600/30 to-indigo-900/30' },
-    { name: 'BACCARAT', icon: Crown, color: 'text-yellow-400', bg: 'from-yellow-600/30 to-amber-900/30' },
-    { name: 'KENO', icon: Star, color: 'text-emerald-400', bg: 'from-emerald-600/30 to-green-900/30' },
-    { name: 'WHEEL OF FORTUNE', icon: Disc, color: 'text-red-400', bg: 'from-red-600/30 to-rose-900/30' },
-    { name: 'SCRATCH', icon: Gem, color: 'text-pink-400', bg: 'from-pink-600/30 to-fuchsia-900/30' },
-    { name: 'VIDEO POKER', icon: Spade, color: 'text-blue-400', bg: 'from-blue-600/30 to-cyan-900/30' },
+    { name: 'SLOTS', icon: Gem, color: 'text-fuchsia-400', bg: 'from-fuchsia-600/30 to-purple-900/30', img: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=400' },
+    { name: 'ROULETTE', icon: Disc, color: 'text-cyan-400', bg: 'from-cyan-600/30 to-blue-900/30', img: 'https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?q=80&w=400' },
+    { name: 'POKER', icon: Club, color: 'text-amber-400', bg: 'from-amber-600/30 to-orange-900/30', img: 'https://images.unsplash.com/photo-1551269901-5c5e14c25df7?q=80&w=400' },
+    { name: 'BLACKJACK', icon: Spade, color: 'text-rose-400', bg: 'from-rose-600/30 to-red-900/30', img: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=400' },
+    { name: 'DICE', icon: Dices, color: 'text-purple-400', bg: 'from-purple-600/30 to-indigo-900/30', img: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=400' },
+    { name: 'BACCARAT', icon: Crown, color: 'text-yellow-400', bg: 'from-yellow-600/30 to-amber-900/30', img: 'https://images.unsplash.com/photo-1596742572435-081d21b023be?q=80&w=400' },
+    { name: 'KENO', icon: Star, color: 'text-emerald-400', bg: 'from-emerald-600/30 to-green-900/30', img: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?q=80&w=400' },
+    { name: 'WHEEL OF FORTUNE', icon: Disc, color: 'text-red-400', bg: 'from-red-600/30 to-rose-900/30', img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=400' },
+    { name: 'SCRATCH', icon: Gem, color: 'text-pink-400', bg: 'from-pink-600/30 to-fuchsia-900/30', img: 'https://images.unsplash.com/photo-1560264280-88b68371db39?q=80&w=400' },
+    { name: 'VIDEO POKER', icon: Spade, color: 'text-blue-400', bg: 'from-blue-600/30 to-cyan-900/30', img: 'https://images.unsplash.com/photo-1511193311914-0346f16efe90?q=80&w=400' },
   ];
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -178,7 +178,7 @@ const ContentGrid = () => {
                     return (
                         <div 
                             key={idx}
-                            className={`absolute aspect-[3/4] group ${CARD_WIDTH_CLASS}`}
+                            className={`absolute aspect-[3/4] group ${CARD_WIDTH_CLASS} overflow-hidden`}
                             style={{
                                 left: '50%',
                                 top: `${CENTER_Y_OFFSET + 80}px`,
@@ -188,18 +188,23 @@ const ContentGrid = () => {
                                 transition: isDragging ? 'none' : 'transform 0.5s ease-out, opacity 0.5s ease-out',
                             }}
                         >
-                             <div className="w-full h-full relative">
-                                <div className={`absolute inset-0 bg-gradient-to-br ${game.bg} border border-white/10 rounded-2xl shadow-2xl group-hover:shadow-[0_0_30px_rgba(217,70,239,0.6)] group-hover:border-fuchsia-500/80 transition-all overflow-hidden`}>
+                             <div className="w-full h-full relative rounded-2xl overflow-hidden">
+                                <img 
+                                   src={game.img} 
+                                   alt={game.name}
+                                   className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-500 rounded-2xl"
+                                />
+                                <div className={`absolute inset-0 bg-gradient-to-br ${game.bg} border border-white/10 rounded-2xl shadow-2xl group-hover:shadow-[0_0_30px_rgba(217,70,239,0.6)] group-hover:border-fuchsia-500/80 transition-all`}>
                                    <div className="absolute inset-0 opacity-40 group-hover:opacity-80 transition-opacity"></div>
                                    <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/diagonal-lines.png')]"></div>
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent rounded-2xl"></div>
 
-                                <div className="relative h-full flex flex-col items-center justify-center p-2 md:p-4 text-center">
-                                    <div className={`w-10 md:w-14 h-10 md:h-14 rounded-full bg-white/10 flex items-center justify-center mb-2 md:mb-4 ${game.color} shadow-[0_0_20px_rgba(0,0,0,0.8)] border-2 border-white/20 group-hover:border-white/40 transition-all group-hover:scale-110`}>
-                                        <Icon size={isMobile ? 18 : 28} strokeWidth={1.5} />
+                                <div className="relative h-full flex flex-col items-center justify-center p-2 md:p-4 text-center z-10">
+                                    <div className={`w-14 md:w-20 h-14 md:h-20 rounded-full bg-gradient-to-br ${game.bg} flex items-center justify-center mb-3 md:mb-6 ${game.color} shadow-[0_0_30px_rgba(217,70,239,0.5)] border-2 border-white/40 group-hover:border-white/80 transition-all group-hover:scale-125 group-hover:shadow-[0_0_50px_rgba(217,70,239,0.8)]`}>
+                                        <Icon size={isMobile ? 28 : 40} strokeWidth={1} />
                                     </div>
-                                    <span className="text-white font-bold text-[8px] md:text-[10px] tracking-widest uppercase group-hover:text-fuchsia-100 transition-colors drop-shadow-sm">{game.name}</span>
+                                    <span className="text-white font-black text-[10px] md:text-xs tracking-widest uppercase group-hover:text-fuchsia-200 transition-colors drop-shadow-lg">{game.name}</span>
                                 </div>
                              </div>
                         </div>

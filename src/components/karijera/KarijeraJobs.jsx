@@ -1,5 +1,6 @@
 import React from 'react';
 import { Briefcase, MapPin, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const KarijeraJobs = ({ jobs }) => {
   return (
@@ -44,9 +45,12 @@ const KarijeraJobs = ({ jobs }) => {
                     {job.highlight}
                   </p>
 
-                  <button className="w-full sm:w-max px-10 py-4 bg-fuchsia-500/90 text-white rounded-3xl text-[10px] tracking-widest hover:bg-fuchsia-400 transition-all shadow-[0_0_24px_rgba(217,70,239,0.35)] flex items-center justify-center gap-2 uppercase font-black">
+                  <Link
+                    to={`/career/${job.id}`}
+                    className="w-full sm:w-max px-10 py-4 bg-fuchsia-500/90 text-white rounded-3xl text-[10px] tracking-widest hover:bg-fuchsia-400 transition-all shadow-[0_0_24px_rgba(217,70,239,0.35)] flex items-center justify-center gap-2 uppercase font-black"
+                  >
                     PRIJAVI SE ODMAH <ArrowUpRight size={16} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             );

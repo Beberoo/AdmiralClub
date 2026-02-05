@@ -1,5 +1,6 @@
 import React from 'react';
 import { Zap, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const PromocijeCards = ({ activePromos }) => {
   const isScrollable = activePromos.length > 3;
@@ -33,7 +34,7 @@ const PromocijeCards = ({ activePromos }) => {
               <img
                 src={promo.img}
                 alt=""
-                className="w-full h-full object-cover opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-[3000ms]"
+                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-[3000ms]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
@@ -48,10 +49,13 @@ const PromocijeCards = ({ activePromos }) => {
                   {promo.title}
                 </h3>
                 <p className="text-fuchsia-400 text-lg md:text-xl mb-8 tracking-widest">{promo.subtitle}</p>
-                <button className="flex items-center gap-1 text-[9px] font-black text-white hover:text-fuchsia-500 transition-colors group/btn uppercase whitespace-nowrap">
+                <Link
+                  to={`/promo/${promo.id}`}
+                  className="flex items-center gap-1 text-[9px] font-black text-white hover:text-fuchsia-500 transition-colors group/btn uppercase whitespace-nowrap"
+                >
                   PROČITAJ{' '}
                   <ArrowUpRight size={12} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                </button>
+                </Link>
               </div>
             </div>
           );
